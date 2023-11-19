@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cloud Computing, Kelompok 2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/main.css">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md bg-light navbar-light">
+      <div class='container'>
+        <!-- Brand -->
+        <a class="navbar-brand" href="/">Cloud Computing, Kelompok 2</a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto">
+            {% if session.username %}
+              <li class="nav-item">
+                <a class="nav-link" href="/home">Hola Diablos, {{session.username}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+            {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+                <li class="nav-item">
+              <a class="nav-link" href="/reg">Registration</a>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class='container mt-4'>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    
+    {% block body %}
+      <h3 class='jumbotron'>Hola {{session.username}}, Welcome to Amikom Rangers Biography</h3>
+      <section class="section about-section gray-bg" id="about">
+        <div class="container">
+            <div class="row align-items-center flex-row-reverse">
+                <div class="col-lg-6">
+                    <div class="about-text go-to">
+                        <h3 class="dark-color">Ranger Pink</h3>
+                        <h6 class="theme-color lead">Faishal Iza Maulana Slovenski</h6>
+                        <p>Rangers Pink adalah pahlawan berwarna merah jambu yang penuh semangat dan keceriaan! Dengan kostum berkilauan dan senyuman yang selalu bersinar, dia adalah kekuatan bercahaya dalam tim Rangers. Selain kepiawaiannya dalam bertarung melawan kejahatan, Rangers Pink juga memiliki keahlian khusus dalam menyemangati timnya dengan keceriaan dan kehangatan. Setiap langkahnya dipenuhi dengan semangat positif, dan keberaniannya selalu diiringi oleh senyuman yang menginspirasi. Bersama Rangers Pink, setiap misi menjadi petualangan penuh kegembiraan!</p>
+                        <div class="row about-list">
+                            <div class="col-md-6">
+                                <div class="media">
+                                    <label>Birthday</label>
+                                    <p>4th april 1998</p>
+                                </div>
+                                <div class="media">
+                                    <label>Age</label>
+                                    <p>22 Yr</p>
+                                </div>
+                                <div class="media">
+                                    <label>NPM</label>
+                                    <p>21.83.0603</p>
+                                </div>
+                                <div class="media">
+                                    <label>Address</label>
+                                    <p>Kulon Progo</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="media">
+                                    <label>E-mail</label>
+                                    <p>izaganteng123@gmail.com</p>
+                                </div>
+                                <div class="media">
+                                    <label>Phone</label>
+                                    <p>820-885-3321</p>
+                                </div>
+            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-avatar">
+                        <img src="/static/image/pink.jpg" title="" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="counter">
+                <div class="row">
+                    <div class="col-6 col-lg-3">
+                        <div class="count-data text-center">
+                            <h6 class="count h2" data-to="500" data-speed="500">500</h6>
+                            <p class="m-0px font-w-600">Musuh Terkalahkan</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="count-data text-center">
+                            <h6 class="count h2" data-to="150" data-speed="150">150</h6>
+                            <p class="m-0px font-w-600">Misi Selesai</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="count-data text-center">
+                            <h6 class="count h2" data-to="850" data-speed="850">3</h6>
+                            <p class="m-0px font-w-600">Mantan Terindah</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="count-data text-center">
+                            <h6 class="count h2" data-to="190" data-speed="190">5</h6>
+                            <p class="m-0px font-w-600">Tahun Menjomblo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section about-section gray-bg" id="about">
+        <div class="container">
+            <div class="row align-items-center flex-row-reverse">
+                <div class="col-lg-6">
+                    <div class="about-text go-to">
+                        <h3 class="dark-color">Ranger Red</h3>
+                        <h6 class="theme-color lead">Muhammad Dava Ramadhan</h6>
+                        <p>Rangers Red adalah pahlawan berwarna merah yang penuh keberanian dan determinasi! Dengan kostum keren yang mencerminkan semangat petualangan. Dia dalam pertarungan melawan kejahatan, juga menjadi inspirasi bagi rekan-rekannya dengan tekadnya yang tak tergoyahkan. kegigihannya untuk melindungi keadilan membuatnya menjadi tulang punggung tim. Bersama Rangers Red, setiap tantangan dihadapi dengan semangat heroik dan tekad yang membara!</p>
+                        <div class="row about-list">
+                            <div class="col-md-6">
+                                <div class="media">
+                                    <label>Birthday</label>
+                                    <p>4th april 1998</p>
+                                </div>
+                                <div class="media">
+                                    <label>Age</label>
+                                    <p>22 Yr</p>
+                                </div>
+                                <div class="media">
+                                    <label>NPM</label>
+                                    <p>21.83.0597</p>
+                                </div>
+                                <div class="media">
+                                    <label>Address</label>
+                                    <p>Maguwo</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="media">
+                                    <label>E-mail</label>
+                                    <p>mdava.redrangers@gmail.com</p>
+                                </div>
+                                <div class="media">
+                                    <label>Phone</label>
+                                    <p>820-885-3321</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-avatar">
+                        <img src="/static/image/red1.jpg" title="" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="counter">
+                <div class="row">
+                    <div class="col-6 col-lg-3">
+                        <div class="count-data text-center">
+                            <h6 class="count h2" data-to="500" data-speed="500">500</h6>
+                            <p class="m-0px font-w-600">Happy Clients</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="count-data text-center">
+                            <h6 class="count h2" data-to="150" data-speed="150">150</h6>
+                            <p class="m-0px font-w-600">Project Completed</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="count-data text-center">
+                            <h6 class="count h2" data-to="850" data-speed="850">850</h6>
+                            <p class="m-0px font-w-600">Photo Capture</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="count-data text-center">
+                            <h6 class="count h2" data-to="190" data-speed="190">190</h6>
+                            <p class="m-0px font-w-600">Telephonic Talk</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section about-section gray-bg" id="about">
+        <div class="container">
+            <div class="row align-items-center flex-row-reverse">
+                <div class="col-lg-6">
+                    <div class="about-text go-to">
+                        <h3 class="dark-color">Ranger Blue</h3>
+                        <h6 class="theme-color lead">Daffa Irfantoro</h6>
+                        <p>Rangers Blue adalah pahlawan berwarna biru yang menyinari timnya dengan kecerdasan dan kebijaksanaan! Dengan kostum biru yang mencerminkan ketenangan, Rangers Blue membawa keahlian strategis yang luar biasa dalam melawan kejahatan. Dalam setiap misi, dia selalu menunjukkan kecerdasan taktisnya untuk mengatasi setiap tantangan. Rangers Blue tidak hanya seorang pejuang yang ulung, tetapi juga teman yang dapat diandalkan dan bijaksana dalam mengambil keputusan sulit. Dengan kehadiran Rangers Blue, tim menjadi lebih lengkap dengan kebijaksanaan yang membimbing mereka melewati setiap rintangan dengan kepala dingin dan hati penuh semangat!</p>
+                        <div class="row about-list">
+                            <div class="col-md-6">
+                                <div class="media">
+                                    <label>Birthday</label>
+                                    <p>27 Des 2002</p>
+                                </div>
+                                <div class="media">
+                                    <label>Age</label>
+                                    <p>21 Yr</p>
+                                </div>
+                                <div class="media">
+                                    <label>NPM</label>
+                                    <p>21.83.0603</p>
+                                </div>
+                                <div class="media">
+                                    <label>Address</label>
+                                    <p>Sleman</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="media">
+                                    <label>E-mail</label>
+                                    <p>Daffairfan@gmail.com</p>
+                                </div>
+                                <div class="media">
+                                    <label>Phone</label>
+                                    <p>820-885-3321</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-avatar">
+                        <img src="/static/image/blue.jpg" title="" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="counter">
+                <div class="row">
+                    <div class="col-6 col-lg-3">
+                        <div class="count-data text-center">
+                            <h6 class="count h2" data-to="500" data-speed="500">500</h6>
+                            <p class="m-0px font-w-600">Happy Clients</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="count-data text-center">
+                            <h6 class="count h2" data-to="150" data-speed="150">150</h6>
+                            <p class="m-0px font-w-600">Project Completed</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="count-data text-center">
+                            <h6 class="count h2" data-to="850" data-speed="850">850</h6>
+                            <p class="m-0px font-w-600">Photo Capture</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="count-data text-center">
+                            <h6 class="count h2" data-to="190" data-speed="190">190</h6>
+                            <p class="m-0px font-w-600">Telephonic Talk</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+      
+    {% endblock %}
+    </div>
+  </body>
+</html>
