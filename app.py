@@ -9,7 +9,7 @@ server = 'mysqllogin.database.windows.net'
 database = 'dbdbkelompok2'
 username = 'daffa'
 password = 'Nusantara45_'
-driver = '{ODBC Driver 17 for SQL Server}'
+driver = '{ODBC Driver 18 for SQL Server}'
 
 # Membangun koneksi ke Azure SQL Server
 conn_str = f'DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={password}'
